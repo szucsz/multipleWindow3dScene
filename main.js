@@ -176,7 +176,7 @@ else
 			cube.position.x = cube.position.x + (posTarget.x - cube.position.x) * falloff;
 			cube.position.y = cube.position.y + (posTarget.y - cube.position.y) * falloff;
 			cube.rotation.x = _t * .5;
-			cube.rotation.y = _t * .3;
+			cube.rotation.y = _t * 1.3;
 		};
 
 		renderer.render(scene, camera);
