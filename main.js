@@ -1,7 +1,7 @@
 import WindowManager from './WindowManager.js'
+import BroadcastWindowManager from './BroadcastWindowManager.js'
 
-
-
+const useBroadcast = true;
 const t = THREE;
 let camera, scene, renderer, world;
 let near, far;
@@ -89,7 +89,11 @@ else
 
 	function setupWindowManager ()
 	{
-		windowManager = new WindowManager();
+		if(useBroadcast) {
+			windowManager = new BroadcastWindowManager();
+		} else {
+			windowManager = new WindowManager();
+		}
 		windowManager.setWinShapeChangeCallback(updateWindowShape);
 		windowManager.setWinChangeCallback(windowsUpdated);
 
